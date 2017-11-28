@@ -207,11 +207,11 @@ Proper validation is performed for the `url` and `sourceApplication`.
 ### DV-002 Check UIWebView
 ### Overview
 `UIWebView` is the iOS-rendering engine for displaying web content, it supports a number of different file formats, including:
-    - HTML
-    - PDF
-    - RTF
-    - Office Documents (doc, xls, ppt)
-    - iWork Documents (Pages, Numbers, and Keynote)
+- HTML
+- PDF
+- RTF
+- Office Documents (doc, xls, ppt)
+- iWork Documents (Pages, Numbers, and Keynote)
 
 Consequently, a web view is also a web browser and can be used to fetch and display remote content. As would be expected of a web browser, web views also support JavaScript, allowing applications to perform dynamic, client-side scripting.
 ### Code review
@@ -356,13 +356,15 @@ No sensitive data will be cached by snapshots.
 Apple provides a means of accessing the device's geolocation features using the Core Location framework. Device coordinates can be determined using GPS, cell tower triangulation, or Wi-Fi network proximity. When using geolocation data, developers should consider two main privacy concerns: how and where data is used and the requested accuracy of coordinates.
 ### Code review
 When using `CLocationManager`, an app can request accuracy using the `CLLocationAccuracy` class that offers the following constants:
-    - kCLLocationAccuracyBestForNavigation
-    - kCLLocationAccuracyBest
-    - kCLLocationAccuracyNearestTenMeters
-    - kCLLocationAccuracyHundredMeters
-    - kCLLocationAccuracyKilometer
-    - kCLLocationAccuracyThreeKilometers
+- kCLLocationAccuracyBestForNavigation
+- kCLLocationAccuracyBest
+- kCLLocationAccuracyNearestTenMeters
+- kCLLocationAccuracyHundredMeters
+- kCLLocationAccuracyKilometer
+- kCLLocationAccuracyThreeKilometers
+
 Check the source code to identify the level of location accuracy.
+
 ### Manual assessment
 Check the client side storage and data sent to server.
 ### Expected result
@@ -373,13 +375,14 @@ Application does not disclose location data.
 ### SD-006 Check Keychain
 ### Overview
 The iOS keychain is an encrypted container used for storing sensitive data such as credentials, encryption keys, or certificates. The following list describes the available accessibility protection classes for keychain items:
-    - kSecAttrAccessibleAlways
-    - kSecAttrAccessibleWhenUnlocked
-    - kSecAttrAccessibleAfterFirstUnlock
-    - kSecAttrAccessibleAlwaysThisDeviceOnly
-    - kSecAttrAccessibleWhenUnlockedThisDeviceOnly
-    - kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
-    - kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly
+- kSecAttrAccessibleAlways
+- kSecAttrAccessibleWhenUnlocked
+- kSecAttrAccessibleAfterFirstUnlock
+- kSecAttrAccessibleAlwaysThisDeviceOnly
+- kSecAttrAccessibleWhenUnlockedThisDeviceOnly
+- kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
+- kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly
+
 ### Code review
 Check the Keychain usage in source code to identify the keychain accessibility.
 ### Manual assessment
